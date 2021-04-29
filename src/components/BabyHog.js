@@ -13,6 +13,19 @@ function BabyHog(props) {
     // perhaps something with e.target.name === "+"
   }
 
+  function eyeColorMapper(color) {
+    if (color === "blue") {
+      return BlueBaby 
+    } 
+    else if (color === "glowing") {
+      return GlowingBaby
+    } 
+    else if (color === "sun") {
+      return SunBaby
+    }
+    else {return normalBaby}
+  }
+
   return (
     <li className="hogbabies">
       <h1>Name</h1>
@@ -25,7 +38,7 @@ function BabyHog(props) {
 
       <div className="hb-wrap">
         <img
-          src={normalBaby}
+          src={eyeColorMapper(props.eyeColor)}
           style={{ height: "200px" }}
           alt="MasterBlasterJrJr"
         />
